@@ -1,0 +1,17 @@
+version: "3"
+services:
+  quote-editor-db:
+    image: mysql:8.0
+    volumes:
+      - quote-editor-db-store:/var/lib/mysql
+      - ./logs:/var/log/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - TZ=${TZ}
+    ports:
+      - ${DB_PORT}:3306
+
+volumes:
+  quote-editor-db-store:

@@ -1,0 +1,47 @@
+/usr/sbin/mysqld, Version: 8.0.22 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-06-22T21:34:59.588133+09:00	    8 Connect	root@172.19.0.1 on quote_editor_development using SSL/TLS
+2022-06-22T21:34:59.616992+09:00	    8 Query	SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+2022-06-22T21:34:59.690103+09:00	    8 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE' AND _subquery.table_name = 'schema_migrations'
+2022-06-22T21:34:59.712137+09:00	    8 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE' AND _subquery.table_name = 'ar_internal_metadata'
+2022-06-22T21:34:59.715603+09:00	    8 Query	SELECT database()
+2022-06-22T21:34:59.737930+09:00	    9 Connect	root@172.19.0.1 on quote_editor_development using SSL/TLS
+2022-06-22T21:34:59.740056+09:00	    9 Query	SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+2022-06-22T21:34:59.742628+09:00	    9 Query	SELECT GET_LOCK('1491499144867068645', 0)
+2022-06-22T21:34:59.760611+09:00	    8 Query	SHOW FULL FIELDS FROM `schema_migrations`
+2022-06-22T21:34:59.774092+09:00	    8 Query	SELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC
+2022-06-22T21:34:59.840826+09:00	    8 Query	SHOW FULL FIELDS FROM `ar_internal_metadata`
+2022-06-22T21:34:59.849143+09:00	    8 Query	SELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1
+2022-06-22T21:34:59.852468+09:00	    8 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery
+2022-06-22T21:34:59.860710+09:00	    9 Query	SELECT RELEASE_LOCK('1491499144867068645')
+2022-06-22T21:34:59.865109+09:00	    9 Quit	
+2022-06-22T21:34:59.866985+09:00	    8 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_name = 'schema_migrations'
+2022-06-22T21:34:59.869061+09:00	    8 Query	SELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC
+2022-06-22T21:34:59.871484+09:00	    8 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE'
+2022-06-22T21:34:59.874246+09:00	    8 Quit	
+2022-06-22T21:34:59.890932+09:00	   10 Connect	root@172.19.0.1 on quote_editor_test using SSL/TLS
+2022-06-22T21:34:59.893824+09:00	   10 Query	SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+2022-06-22T21:34:59.897086+09:00	   10 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE' AND _subquery.table_name = 'schema_migrations'
+2022-06-22T21:34:59.906319+09:00	   10 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE' AND _subquery.table_name = 'ar_internal_metadata'
+2022-06-22T21:34:59.909819+09:00	   10 Query	SELECT database()
+2022-06-22T21:34:59.941448+09:00	   11 Connect	root@172.19.0.1 on quote_editor_test using SSL/TLS
+2022-06-22T21:34:59.944887+09:00	   11 Query	SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+2022-06-22T21:34:59.950590+09:00	   11 Query	SELECT GET_LOCK('3815198985736809615', 0)
+2022-06-22T21:34:59.952700+09:00	   10 Query	SELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC
+2022-06-22T21:34:59.956491+09:00	   10 Query	SELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1
+2022-06-22T21:34:59.960219+09:00	   10 Query	BEGIN
+2022-06-22T21:34:59.962468+09:00	   10 Query	UPDATE `ar_internal_metadata` SET `ar_internal_metadata`.`value` = 'development', `ar_internal_metadata`.`updated_at` = '2022-06-22 12:34:59.947846' WHERE `ar_internal_metadata`.`key` = 'environment'
+2022-06-22T21:34:59.966508+09:00	   10 Query	COMMIT
+2022-06-22T21:34:59.970234+09:00	   11 Query	SELECT RELEASE_LOCK('3815198985736809615')
+2022-06-22T21:34:59.973134+09:00	   11 Quit	
+2022-06-22T21:34:59.975022+09:00	   10 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_name = 'schema_migrations'
+2022-06-22T21:34:59.978422+09:00	   10 Query	SELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC
+2022-06-22T21:34:59.980067+09:00	   10 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_type = 'BASE TABLE'
+2022-06-22T21:34:59.982457+09:00	   10 Quit	
+2022-06-22T21:35:29.699358+09:00	   12 Connect	root@172.19.0.1 on quote_editor_development using SSL/TLS
+2022-06-22T21:35:29.722270+09:00	   12 Query	SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+2022-06-22T21:35:30.001976+09:00	   12 Query	SELECT table_name FROM (SELECT table_name, table_type FROM information_schema.tables  WHERE table_schema = database()) _subquery WHERE _subquery.table_name = 'schema_migrations'
+2022-06-22T21:35:30.044805+09:00	   12 Query	SHOW FULL FIELDS FROM `schema_migrations`
+2022-06-22T21:35:30.055084+09:00	   12 Query	SELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC
+2022-06-22T21:35:32.982929+09:00	   12 Quit	
