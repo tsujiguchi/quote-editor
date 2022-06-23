@@ -225,3 +225,5 @@ tags
 !.vscode/extensions.json
 
 .history
+
+logs/
