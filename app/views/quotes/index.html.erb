@@ -12,4 +12,6 @@
   <%= turbo_frame_tag 'quotes' do %>
     <%= render @quotes %>
   <% end %>
+
+  <%= turbo_stream_from "quotes" %>
 </main>
