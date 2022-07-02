@@ -1,6 +1,8 @@
 class Quote < ApplicationRecord
   validates :name, presence: true
 
+  belongs_to :company
+
   scope :ordered, -> { order(id: :desc) }
 
   # # partialとlocalsはデフォルト値がモデルから推測できるので、省略可
@@ -11,5 +13,5 @@ class Quote < ApplicationRecord
   # after_destroy_commit -> { broadcast_remove_to 'quotes' }
 
   # after_create_commit after_update_commit after_destroy_commit は以下に纏められる
-  broadcasts_to ->(quote) { 'quotes' }, inserts_by: :prepend
+  broadcasts_to ->(quote) { [quote.company, "quotes"] }, inserts_by: :prepend
 end
